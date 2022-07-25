@@ -1,0 +1,49 @@
+.message-header, h2 {
+    font-family: Cambria;
+    color:#ed4401;
+    font-weight: bold;
+    
+    
+}
+.message, p{
+
+    font-family: Cambria;
+    color: #444;
+    font-size: 1.1em;
+}
+
+.message{
+    position: fixed;
+    top: 2.5em;
+    width: 40%;
+    margin-left: 55%;
+    left: -25%;   
+    z-index: 20;
+    border: 2px solid #444;
+    background-color:#fff ;
+    border-radius: 5px;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+button{
+    padding: 0.5em;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+    color: #ed4401;
+    
+}
+
+.icon-x{
+    color:red;
+    font-weight: bold;
+    
+}

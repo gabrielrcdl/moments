@@ -1,0 +1,17 @@
+<div class="moment" *ngIf="momentUnique">
+    <h1>{{momentUnique.title}}</h1>
+    <img src="{{baseApiUrl}}uploads/{{momentUnique.image}}" alt="">
+    
+    <div class="about-moment">
+        <h3>Sobre este momento:</h3>
+        <p>{{ momentUnique.description }}</p>
+    </div>
+    <div class="actions">
+        <a routerLink="/moments/edit/{{momentUnique.id}}" class="edit-btn">
+            <mat-icon class="icon-actions">edit</mat-icon>Editar
+        </a>
+        <button (click)="removeHandler(momentUnique.id!)" class="remove-btn">
+            <mat-icon class="icon-actions">delete</mat-icon>Excluir
+        </button>
+    </div>
+</div>

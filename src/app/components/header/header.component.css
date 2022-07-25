@@ -1,0 +1,45 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: #FF861A;
+   
+  
+}
+#titulo{
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #fff;
+    font-family: Yellowtail;
+}
+
+.brand, .links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.brand img{
+    margin-right: 0.6rem;
+}
+
+.links li{
+    margin-right: 1em;
+    list-style: none;
+}
+
+.links a{
+    font-size: 1.4em; 
+    font-weight: 500;
+    color: #fff;
+    font-family: Cambria;
+    
+}
+
+.links a:hover{
+    color: #444;
+ 
+   
+}
+
