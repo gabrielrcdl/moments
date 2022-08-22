@@ -1,64 +1,91 @@
-.moment{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 60%;
-    margin: auto;
-    box-shadow: 0 0 1em #808080;
-    border-radius: 5px;
-  
+.moment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  box-shadow: 0 0 1em #808080;
+  border-radius: 5px;
 }
 
-.actions, a, button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1em;
-    font-family: Cambria;
-    background: none;
-    border: none;
-    padding: 0.5em;
-    cursor: pointer;
-}
-.actions button:hover{
-   background-color: #efefef;
-   color: #ff861a;
-   transition: 0.5s;
-   
-}
-.actions a:hover{
-    color: #ff861a;
-    background-color: #efefef;
-    transition: 0.5s;
-}
-.icon-actions{
-    color: #ff861a;
+.actions,
+a,
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  font-family: Cambria;
+  background: none;
+  border: none;
+  padding: 0.5em;
+  cursor: pointer;
+  margin-top: -20px;
+  margin-right: -4px;
+  margin-left: -4px;
+  align-items: center;
 }
 
-h1{
-    padding: 10px;
-    margin-top: 1.3em;
-    font-family: Cambria;
-    font-size: 2.2em;
-    font-weight: 500;
+.icon-actions {
+  margin-top: 10px;
+  color: #ff861a;
+  font-size: 1.3rem;
 }
 
-h3{
-    font-family: Cambria;
-    font-size: 1.5em ;
-    font-weight: 500;
+h1 {
+  padding: 10px;
+  margin-top: 1.3em;
+  font-family: Cambria;
+  font-size: 2.2em;
+  font-weight: 500;
 }
 
-img{
-    max-width: 80%;
-    margin: 0 auto 1em;
+h3 {
+  font-family: Cambria;
+  font-size: 1.5em;
+  font-weight: 500;
 }
 
+img {
+  max-width: 70%;
+  margin: 0 auto 1em;
+}
 
-.about-moment{
-    padding-bottom:1em;
-    border-bottom: 1px solid #ccc;
-    padding: 1.2em;
+.comments {
+  margin-top: 50px;
+}
+
+.about-moment {
+  padding-bottom: 1em;
+
+  padding: 1.2em;
+}
+
+.commet-form {
+  margin-top: 35px;
+  padding: 20px;
+  width: 80%;
+  background: #efefef;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#go-comment {
+  margin: auto;
+  margin-top: 15px;
+  background-color: #ff861a;
+  color: #efefef;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+#go-comment:hover {
+  background-color: #ccc;
+  color: #ff861a;
+  transition: 0.5s;
+}
+#user-name {
+  width: 100%;
 }

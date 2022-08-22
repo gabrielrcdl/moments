@@ -1,48 +1,50 @@
-<div class=container-form>
-    <form (ngSubmit)="submit()" [formGroup]="momentForm" #formDir="ngForm">
+<div class="container-form">
+  <form (ngSubmit)="submit()" [formGroup]="momentForm" #formDir="ngForm">
+    <input type="hidden" formControlName="id" />
+    <div class="group-form">
+      <label for="title">Título:</label>
+      <input
+        type="text"
+        autocomplete="off"
+        placeholder="Insira um título para o seu momento..."
+        formControlName="title"
+        required
+      />
+    </div>
+    <div
+      *ngIf="(title.invalid && title.touched) || formDir.submitted"
+      class="validation-error"
+    >
+      <small *ngIf="title.errors?.['required']">
+        O título é obrigatório!
+      </small>
+    </div>
 
-        <div class="group-form">
-            <label for="title">Título:</label>
-            <input 
-            type="text" 
-            autocomplete="off" 
-            placeholder="Insira um título para o seu momento..." 
-            formControlName="title"
-            required />
-        </div>
-        <div *ngIf="title.invalid && title.touched || formDir.submitted " class="validation-error">
-            <small *ngIf="title.errors?.['required']">
-                O título é obrigatório!
-            </small>
-        </div>
+    <div class="group-form">
+      <label for="description">Descrição:</label>
+      <textarea
+        placeholder="Uma descrição..."
+        formControlName="description"
+        required
+      >
+      </textarea>
+    </div>
+    <div
+      *ngIf="(description.invalid && description.touched) || formDir.submitted"
+      class="validation-error"
+    >
+      <small *ngIf="description.errors?.['required']">
+        A descrição é obrigatória!
+      </small>
+    </div>
 
-        <div class="group-form">
-            <label for="description" >Descrição:</label>
-            <textarea 
-            placeholder="Uma descrição..."
-            formControlName="description"
-            required>
-            </textarea>
-        </div>
-        <div *ngIf="description.invalid && description.touched || formDir.submitted " class="validation-error">
-            <small *ngIf="description.errors?.['required']">
-                A descrição é obrigatória!
-            </small>
-        </div>
-
-        <div class="group-form">
-            <label for="image">Escolha uma foto que marcou seu momento:</label>
-            <section class="file-change">
-                <mat-icon>create_new_folder</mat-icon>
-                <input type="file" (change)="onFileSelected($event)">
-            </section>
-            <input type="submit" value="{{ btnText }}">
-        </div>
-    </form>
-   
-   
+    <div class="group-form">
+      <label for="image">Escolha uma foto que marcou seu momento:</label>
+      <section class="file-change">
+        <mat-icon>create_new_folder</mat-icon>
+        <input type="file" (change)="onFileSelected($event)" />
+      </section>
+      <input type="submit" value="{{ btnText }}" />
+    </div>
+  </form>
 </div>
-
-
-
-

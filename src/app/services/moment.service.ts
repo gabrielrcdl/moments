@@ -8,31 +8,33 @@ import { Moment } from '../Moment';
 import { Response } from '../Response';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MomentService {
+  private baseApiUrl = environment.baseApiUrl;
+  private apiUrl = `${this.baseApiUrl}api/moments`;
 
-  private baseApiUrl = environment.baseApiUrl
-  private apiUrl= `${this.baseApiUrl}api/moments`
+  constructor(private http: HttpClient) {}
 
-  constructor( private http: HttpClient ) { }
-
-
-  getMoments():Observable<Response<Moment[]>>{
-      return this.http.get<Response<Moment[]>>(this.apiUrl)
+  getMoments(): Observable<Response<Moment[]>> {
+    return this.http.get<Response<Moment[]>>(this.apiUrl);
   }
 
-  getMomentUnique(id: Number): Observable<Response<Moment>>{
-      const url = `${this.apiUrl}/${id}`;
-      return this.http.get<Response<Moment>>(url);
+  getMomentUnique(id: Number): Observable<Response<Moment>> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Response<Moment>>(url);
   }
 
-
-  createMoment(formData: FormData): Observable<FormData>{
-      return this.http.post<FormData>(this.apiUrl, formData)
+  createMoment(formData: FormData): Observable<FormData> {
+    return this.http.post<FormData>(this.apiUrl, formData);
   }
-  removeMoment(id: number){
-      const url = `${this.apiUrl}/${id}`;
-      return this.http.delete(url);
+  removeMoment(id: number) {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete(url);
+  }
+
+  updateMoment(id: number, formData: FormData): Observable<FormData> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.put<FormData>(url, formData);
   }
 }

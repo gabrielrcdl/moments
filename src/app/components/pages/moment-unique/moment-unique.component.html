@@ -1,17 +1,57 @@
-<div class="moment" *ngIf="momentUnique">
-    <h1>{{momentUnique.title}}</h1>
-    <img src="{{baseApiUrl}}uploads/{{momentUnique.image}}" alt="">
-    
-    <div class="about-moment">
-        <h3>Sobre este momento:</h3>
-        <p>{{ momentUnique.description }}</p>
+<mat-card class="moment" *ngIf="momentUnique">
+  <h1>{{ momentUnique.title }}</h1>
+  <img src="{{ baseApiUrl }}uploads/{{ momentUnique.image }}" alt="" />
+
+  <div class="about-moment">
+    <h3>Sobre este momento:</h3>
+    <p>{{ momentUnique.description }}</p>
+  </div>
+  <div class="actions">
+    <a routerLink="/moments/edit/{{ momentUnique.id }}" class="edit-btn">
+      <mat-icon class="icon-actions">edit</mat-icon>
+    </a>
+    <button (click)="removeHandler(momentUnique.id!)" class="remove-btn">
+      <mat-icon class="icon-actions">delete</mat-icon>
+    </button>
+  </div>
+
+  <div class="comments">
+    <h3>
+
+      Comentários:
+      {{
+        momentUnique.comments!.length > 0 ? momentUnique.comments!.length : 0
+      }}
+    </h3>
+    <div
+      class="comment-container"
+      *ngFor="let comment of momentUnique.comments"
+    >
+      <p class="comment">{{ comment.text }}</p>
+      <p class="auto">
+        <span>{{ comment.username }}</span>
+      </p>
     </div>
-    <div class="actions">
-        <a routerLink="/moments/edit/{{momentUnique.id}}" class="edit-btn">
-            <mat-icon class="icon-actions">edit</mat-icon>Editar
-        </a>
-        <button (click)="removeHandler(momentUnique.id!)" class="remove-btn">
-            <mat-icon class="icon-actions">delete</mat-icon>Excluir
-        </button>
+    <div *ngIf="momentUnique.comments!.length > 0; else noComments">
+      <p>com comentários</p>
     </div>
-</div>
+    <ng-template #noComments>
+      <p>Não há comentários neste momento</p>
+   </ng-template>
+
+
+  </div>
+
+  <div class="commet-form">
+    <h3>Adicione um comentário</h3>
+    <form class="form-container">
+      <div class="form-group">
+        <textarea rows="5" cols="33" placeholder="Comentar..." required></textarea>
+      </div>
+      <div class="form-group">
+        <input id="user-name" placeholder="Digite seu nome..." required />
+      </div>
+      <button id="go-comment">Comentar!</button>
+    </form>
+  </div>
+</mat-card>

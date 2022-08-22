@@ -2,7 +2,8 @@
     <h2>Editando o momento <span>{{moment.title}}!</span></h2>
 
     <app-moment-form
-     [momentData]="moment" 
+    (onSubmit)="editHandler($event)"
+     [momentData]="moment"
      [btnText]="btnText">
     </app-moment-form>
 </div>
